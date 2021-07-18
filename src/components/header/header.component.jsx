@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { Profiler } from 'react'
+import { Link, useRouteMatch } from 'react-router-dom'
 import { auth } from '../../firebase/firebase.utils'
 
 import { ReactComponent as Logo } from '../../assets/crown.svg'
@@ -11,6 +11,11 @@ const Header = ({ currentUser }) => (
             <Logo className="logo" />
         </Link>
         <div className="options">
+            {currentUser ? (
+                <h4 className="userDisplay">{currentUser.displayName}</h4>
+            ) : (
+                <h4 className="userDisplay">Welcome</h4>
+            )}
             <Link className="option" to="/shop">
                 SHOP
             </Link>

@@ -18,6 +18,11 @@
         align-items: center;
         justify-content: flex-end;
 
+        .userDisplay {
+            text-transform: uppercase;
+            padding: 10px 15px;
+        }
+
         .option {
             padding: 10px 15px;
             cursor: pointer;
